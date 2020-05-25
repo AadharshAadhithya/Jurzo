@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jurzo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='form.css')}}">
+</head>
+
+
+
+<body>
+
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{url_for('home')}}"> <img src="{{url_for('static',filename='img/Loogo.png')}}" alt="Jorzo logo"> </a>
+
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse justify-content-end " id="menu">
+                        <ul class="navbar-nav ml-auto">
+
+                            {%if current_user.is_authenticated%}
+                            <li class="nav-item"><a href="{{url_for('logout')}}" class="nav-link">Logout</a></li>
+                            <li class="nav-item"><a href="{{url_for('memoirs')}}" class="nav-link">My Memoirs</a></li>
+                             <li class="nav-item"><a href="{{url_for('home')}}" class="nav-link">Home</a></li>
+
+
+
+                            {%else%}
+
+                            <li class="nav-item"><a href="{{url_for('register')}}" class="nav-link">Register</a></li>
+                            <li class="nav-item"><a href="{{url_for('login')}}" class="nav-link">Login</a></li>
+
+                            {%endif%}
+
+
+                        </ul>
+                    </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </nav>
+
+
+             <div class="flash-message" >
+
+            {% with messages=get_flashed_messages(with_categories=true)%}
+
+            {%if messages%}
+
+            {%for category,message in messages%}
+
+            <div class="alert alert-{{cetegory}} text-center">
+
+                {{message}}
+
+            </div>
+
+            {%endfor%}
+
+            {%endif%}
+
+            {%endwith%}
+
+
+            </div>
+
+            <div class="landing">
+            <div class="home-wrap">
+                <div class="home-inner">
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!--landing page words-->
+        <div class="caption center-block text-center ">
+
+
+
+
+
+       {%block content%}
+
+       {%endblock content%}
+
+        </div>
+
+
+
+
+
+
+        <!--about-->
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="fixed-bottom">
+    <div id="contact">
+
+        <div class="footer container-fluid">
+            <div class="row">
+
+                <div class="col-md-6">
+                     <img class="align-self-center mr-3" src="{{url_for('static',filename='img/Loogo.png')}}">
+
+                </div>
+
+                <div class="col-md-6">
+                    {%if current_user.is_authenticated%}
+                     <p class="container media-body">Welcome {{current_user.username}}</p>
+
+                    {%else%}
+                     <p class="container media-body">This is a beta version.</p>
+                   {%endif%}
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+</footer>
+
+
+
+
+
+
+    <!--- Script Source Files -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+
+</html>
+
+
+
+
+
+

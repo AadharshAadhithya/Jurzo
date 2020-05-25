@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{slam.name}}-{{ current_user.username}}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='slam.css')}}">
+</head>
+<body>
+
+    <div class="paper">
+  <div class="lines">
+    <div class="text" contenteditable spellcheck="false">
+
+      from {{slam.name}} To  {{current_user.username}} <br /><br />
+      I am available for you in any situation as your friend . You can call me at {{slam.phone_num}} or you can reach me on {{slam.mail}}. If you wanna meet me, peek in the followig address:
+      {{slam.address}}.
+
+      <br /><br />
+
+      dear {{slam.nickname}},
+      If today was your last day, and I'm With you, {{slam.lastd}}. You are my {{slam.what_us}}.
+      <br /><br />
+
+      {{slam.likes}} oh , and dont forget to hear into {{slam.Songs}}
+
+      <br /><br />
+     {{slam.hates}} . and dont forget to wish me on {{slam.birthday}}
+     <br /><br />
+
+     {{slam.Quote}}
+      <br /><br />
+      with love,
+      {{slam.pet_name}} a.k.a {{slam.name}}
+
+
+
+
+
+    </div>
+  </div>
+  <div class="holes hole-top"></div>
+  <div class="holes hole-middle"></div>
+  <div class="holes hole-bottom"></div>
+</div>
+
+</body>
+</html>

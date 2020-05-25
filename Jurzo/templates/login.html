@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{%block content%}
+
+<div class="modal-dialog text-center">
+  <div class="col-sm-9 main-section">
+    <div class="modal-content">
+      <div class="col-12 user-img">
+        <img src="{{url_for('static',filename='img/face.png')}}">
+
+      </div>
+
+      <div class="col-12 form-input">
+        <form method="POST" action="">
+            {{forrm.hidden_tag()}}
+          <div class="form-group">
+             {{forrm.username.label(class="form-control-label")}}
+
+            {% if forrm.username.errors %}
+            {{forrm.username(class="form-control is-invalid")}}
+            {%for error in forrm.username.errors%}
+            <div class="invalid-feeback">
+              <span>{{forrm.username.error}}</span>
+            </div>
+
+            {%endfor%}
+
+            {%else%}
+             {{forrm.username(class="form-control")}}
+
+
+            {%endif%}
+          </div>
+          <div class="form-group passw">
+            {{forrm.password.label(class="form-control-label")}}
+            {% if forrm.password.errors %}
+            {{forrm.password(class="form-control is-invalid")}}
+            {%for error in forrm.password.errors%}
+            <div class="invalid-feeback">
+              <span>{{forrm.password.error}}</span>
+            </div>
+
+            {%endfor%}
+
+             {%else%}
+             {{forrm.password(class="form-control")}}
+
+            {%endif%}
+          </div>
+
+
+          {{forrm.submit(class="btn btn-outline-light")}}
+
+          <div class="form-check">
+                    {{ forrm.remember_me(class="form-check-input") }}
+                    {{ forrm.remember_me.label(class="form-check-label") }}
+                </div>
+
+        </form>
+
+        <div class="col-12 forgot">
+          <a href="{{url_for('register')}}">New?SignUp</a>
+        </div>
+
+        <a href="#" class="text-muted ">Forgot password?</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{%endblock content%}
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends "layout.html"%}
+
+
+  {%block content%}
+
+
+        <!--landing page words-->
+        <div class="caption center-block text-center ">
+
+
+            {%if current_user.is_authenticated%}
+            <h3 class="h3">Click below and share page.</h3>
+            <a class="btn btn-outline-light" href="{{url_for('page' , username=current_user.username)}}">Get Started</a>
+            {%else%}
+            <h3 class="h3">lorem ipsum.</h3>
+            <a class="btn btn-outline-light" href="{{url_for('register')}}">Get Started</a>
+            {%endif%}
+
+
+        </div>
+
+
+
+            {%endblock content%}
+
+
+
+
+
+
+        <div id="about">
+
+
+            <div class="jumbotron">
+
+<h3 class="heading">about</h3>
+
+<div class="row">
+                    <div class="col-md-4 text-center">
+
+                        <h4>
+                         Lorem, ipsum dolor.
+                        </h4>
+
+                        <p>
+                          Lorem, ipsum dolor sit amet consectetur adipisicing elit. A odio aperiam dolorum dolores culpa eum.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+
+                        <h4>
+                            Lorem ipsum dolor sit amet.
+
+                        </h4>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eligendi ullam odio aliquid odit mollitia delectus.
+
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+
+                        <h4>
+                            Lorem, ipsum dolor.
+
+                        </h4>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, non recusandae? Corporis praesentium quas et dignissimos dolore fugiat.
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+

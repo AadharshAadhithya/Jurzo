@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slam_form</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'slamf.css')}}">
+
+</head>
+<body>
+    <div class="container contact">
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="contact-info">
+                <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+                <h2>Slam Me</h2>
+                <h4>Only bonds that matter are those care <br> For eachother <br> {{owner.username}}</h4>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <form method="POST" action="" class="contact-form">
+                {{forms.hidden_tag()}}
+
+                <div class="form-group">
+                  {{forms.name.label(class="form-control-label")}}
+                  {%if forms.name.errors%}
+
+                  {{forms.name(class="form control is-invalid")}}
+
+                  {%for error in forms.name.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.name.error}}</span>
+                  </div>
+
+                  {%endfor%}
+
+
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.name(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+                  <div class="form-group">
+                  {{forms.pet_name.label(class="form-control-label")}}
+                  {%if forms.pet_name.errors%}
+
+                  {{forms.pet_name(class="form control is-invalid")}}
+
+                  {%for error in forms.pet_name.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.pet_name.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.pet_name(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+                  <div class="form-group">
+                  {{forms.phone_num.label(class="form-control-label")}}
+                  {%if forms.name.errors%}
+
+                  {{forms.phone_num(class="form control is-invalid")}}
+
+                  {%for error in forms.phone_num.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.phone_num.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.phone_num(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+                  <div class="form-group">
+                  {{forms.address.label(class="form-control-label")}}
+                  {%if forms.address.errors%}
+
+                  {{forms.address(class="form control is-invalid")}}
+
+                  {%for error in forms.address.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.address.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.address(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+                  <div class="form-group">
+                  {{forms.mail.label(class="form-control-label")}}
+                  {%if forms.mail.errors%}
+
+                  {{forms.mail(class="form control is-invalid")}}
+
+                  {%for error in forms.mail.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.mail.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.mail(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.birthday.label(class="form-control-label")}}
+                  {%if forms.birthday.errors%}
+
+                  {{forms.birthday(class="form control is-invalid")}}
+
+                  {%for error in forms.birthday.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.birthday.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.birthday(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.nick_name.label(class="form-control-label")}}
+                  {%if forms.nick_name.errors%}
+
+                  {{forms.nick_name(class="form control is-invalid")}}
+
+                  {%for error in forms.nick_name.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.nick_name.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.nick_name(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.Quote.label(class="form-control-label")}}
+                  {%if forms.Quote.errors%}
+
+                  {{forms.Quote(class="form control is-invalid")}}
+
+                  {%for error in forms.Quote.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.Quote.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.Quote(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.Songs.label(class="form-control-label")}}
+                  {%if forms.Songs.errors%}
+
+                  {{forms.Songs(class="form control is-invalid")}}
+
+                  {%for error in forms.Songs.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.Songs.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.Songs(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+                  <div class="form-group">
+                  {{forms.likes.label(class="form-control-label")}}
+                  {%if forms.likes.errors%}
+
+                  {{forms.likes(class="form control is-invalid")}}
+
+                  {%for error in forms.likes.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.likes.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.likes(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.hates.label(class="form-control-label")}}
+                  {%if forms.hates.errors%}
+
+                  {{forms.hates(class="form control is-invalid")}}
+
+                  {%for error in forms.hates.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.hates.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.hates(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.hates.label(class="form-control-label")}}
+                  {%if forms.hates.errors%}
+
+                  {{forms.hates(class="form control is-invalid")}}
+
+                  {%for error in forms.hates.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.hates.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.hates(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+
+
+                  <div class="form-group">
+                  {{forms.what_us.label(class="form-control-label")}}
+                  {%if forms.what_us.errors%}
+
+                  {{forms.what_us(class="form control is-invalid")}}
+
+                  {%for error in forms.what_us.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.what_us.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.what_us(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+                     <div class="form-group">
+                  {{forms.lastd.label(class="form-control-label")}}
+                  {%if forms.lastd.errors%}
+
+                  {{forms.lastd(class="form control is-invalid")}}
+
+                  {%for error in forms.lastd.errors%}
+                  <div class="invalid-feedback">
+                    <span>{{forms.lastd.error}}</span>
+                  </div>
+                  {%endfor%}
+                 {%else%}
+                  <div class="col-sm-10">
+                  {{forms.lastd(class="form-control")}}
+                 </div>
+                 {%endif%}
+                </div>
+
+
+                 <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10" style="background-color: #0e0b2b">
+                   {{forms.submit(class="btn btn-outline-light")}}
+                  </div>
+                </div>
+    </form>
+
+
+    </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>

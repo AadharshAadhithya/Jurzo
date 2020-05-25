@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{%block content%}
+
+<div class="modal-dialog text-center ">
+  <div class="col-sm-9 main-section">
+    <div class="modal-content">
+      <div class="col-12 user-img">
+        <img src="{{url_for('static',filename='img/face.png')}}">
+
+      </div>
+
+      <div class="col-12 form-input">
+        <form method="POST" action="">
+            {{forrm.hidden_tag()}}
+
+                <div class="form-group">
+            {{forrm.email.label(class="form-control-label")}}
+
+            {% if forrm.email.errors %}
+            {{forrm.email(class="form-control is-invalid")}}
+            {%for error in forrm.email.errors%}
+            <div class="invalid-feeback">
+              <span>{{forrm.email.error}}</span>
+            </div>
+
+            {%endfor%}
+
+            {%else%}
+             {{forrm.email(class="form-control")}}
+
+
+            {%endif%}
+
+          </div>
+
+          <div class="form-group">
+            {{forrm.username.label(class="form-control-label")}}
+
+            {% if forrm.username.errors %}
+            {{forrm.username(class="form-control is-invalid")}}
+            {%for error in forrm.username.errors%}
+            <div class="invalid-feeback">
+              <span>{{forrm.username.error}}</span>
+            </div>
+
+            {%endfor%}
+
+            {%else%}
+             {{forrm.username(class="form-control")}}
+
+
+            {%endif%}
+
+          </div>
+          <div class="form-group passw">
+            {{forrm.password.label(class="form-control-label")}}
+            {% if forrm.password.errors %}
+            {{forrm.password(class="form-control is-invalid")}}
+            {%for error in forrm.password.errors%}
+            <div class="invalid-feeback">
+              <span>{{forrm.password.error}}</span>
+            </div>
+
+            {%endfor%}
+
+             {%else%}
+             {{forrm.password(class="form-control")}}
+
+            {%endif%}
+
+          </div>
+          <div class="form-group passw">
+          {{forrm.confirm_password.label(class="form-control-label")}}
+            {% if forrm.confirm_password.errors %}
+            {{forrm.confirm_password(class="form-control is-invalid")}}
+            {%for error in forrm.confirm_password.errors%}
+            <div class="invalid-feeback">
+              <span>{{forrm.confirm_password.error}}</span>
+            </div>
+
+            {%endfor%}
+
+             {%else%}
+             {{forrm.confirm_password(class="form-control")}}
+
+            {%endif%}
+
+          </div>
+
+          {{forrm.submit(class="btn btn-outline-light")}}
+
+        </form>
+
+        <div class="col-12 forgot">
+          <a href="{{url_for('login')}}">Already a User?Login</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{%endblock content%}
+
+
+
+
+
+
