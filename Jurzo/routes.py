@@ -58,7 +58,14 @@ def logout():
 @login_required
 def memoirs():
     pages  = Page.query.filter_by(owner=current_user)
-    return render_template('memoirs.html' , pages = pages )
+    Quotes =[]
+    From = []
+    for page in pages:
+        Quotes.append(page.Quote)
+        From.append(page.name)
+    Front_Content = {Quotes[i] : From[i] for i in range(len(Quotes))}
+
+    return render_template('memoirs.html' , pages = pages, Quotes = Front_Content )
 
 
 

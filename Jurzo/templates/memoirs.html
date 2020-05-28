@@ -1,19 +1,23 @@
 {%extends "layout.html"%}
 
+
 {%block content%}
 
+<h1 style= "color:white" class="h1">{{current_user.username}}'s Memoirs</h1>
 
-<h1 class="h1">{{current_user.username}}</h1>
+{%endblock content%}
+
+{%block secondary_content%}
+
+
+
 
 <div class="container cta-100 ">
         <div class="container">
           <div class="row blog">
             <div class="col-md-12">
               <div id="blogCarousel" class="carousel slide container-blog" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#blogCarousel" data-slide-to="1"></li>
-                </ol>
+
                 <!-- Carousel items -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -25,7 +29,7 @@
                         <div class="item-box-blog">
                           <div class="item-box-blog-image">
                             <!--Date-->
-                            <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">Augu 01</span> </div>
+                            <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">{{page.date_created.date()}}</span> </div>
                             <!--Image-->
                             <figure> <img alt="" src="https://cdn.pixabay.com/photo/2017/02/08/14/25/computer-2048983_960_720.jpg"> </figure>
                           </div>
@@ -33,12 +37,15 @@
                             <!--Heading-->
                             <div class="item-box-blog-heading">
 
-                                <h5>{{page.name}}</h5>
+                              <h5></h5>
+
+
+
 
                             </div>
                             <!--Data-->
                             <div class="item-box-blog-data" style="padding: px 15px;">
-                              <p><i class="fa fa-user-o"></i> {{page.name}} <i class="fa fa-comments-o"></i> Comments(3)</p>
+                              <p><i class="fa fa-user-o"></i> {{page.name}} <i class="fa fa-comments-o"></i> </p>
                             </div>
                             <!--Text-->
                             <div class="item-box-blog-text">
@@ -70,6 +77,7 @@
 
 
 
+ {%endblock secondary_content%}
 
-{%endblock content%}
+
 

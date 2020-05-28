@@ -1,18 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+
+
 body{
         background-color: #25274d;
+        font-family: 'Lobster Two', cursive;
     }
     .contact{
         padding: 4%;
         height: 400px;
+        font-family: 'Lobster Two', cursive;
     }
     .col-md-3{
         background: #ff9b00;
         padding: 4%;
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
+        font-family: 'Lobster Two', cursive;
     }
     .contact-info{
         margin-top:10%;
+        font-family: 'Lobster Two', cursive;
     }
     .contact-info img{
         margin-bottom: 15%;
@@ -25,16 +33,22 @@ body{
         padding: 3%;
         border-top-right-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
+        font-family: 'Lobster Two', cursive;
     }
     .contact-form label{
         font-weight:600;
+        font-family: 'Lobster Two', cursive;
     }
     .contact-form button{
         background: #25274d;
         color: #fff;
         font-weight: 600;
         width: 25%;
+        font-family: 'Lobster Two', cursive;
     }
     .contact-form button:focus{
         box-shadow:none;
     }
+.container{
+    font-family: 'Lobster Two', cursive;
+}

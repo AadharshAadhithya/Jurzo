@@ -28,13 +28,39 @@
         <div class="caption center-block text-center ">
 
 
+
+
+
+
+
+
+
+
             {%if current_user.is_authenticated%}
             <h3 class="h3">Click below and share page.</h3>
-            <a class="btn btn-outline-light" href="{{url_for('page' , username=current_user.username)}}">Get Started</a>
+            <div class=" md-form">
+                  <div class="col-md-4">
+             </div>
+
+               <div class="col-md-4">
+                <textarea id="form7" class="md-textarea form-control" rows="1"> domainname{{url_for('page',username=current_user.username)}}</textarea>
+               <label for="form7">Your Slam Link</label>
+             </div>
+
+
+
+               </div>
+
+               <div class="col-md-4">
+             </div>
+
+            <a onclick ="CopyText()" class="btn btn-outline-light">Get Your Slam</a>
             {%else%}
             <h3 class="h3">lorem ipsum.</h3>
             <a class="btn btn-outline-light" href="{{url_for('register')}}">Get Started</a>
             {%endif%}
+
+
 
 
         </div>
