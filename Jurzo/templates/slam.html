@@ -4,33 +4,161 @@
     <meta charset="UTF-8">
     <title>{{slam.name}}-{{ current_user.username}}</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='slam.css')}}">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='form.css')}}">
+  <script type="text/javascript" src="{{url_for('static', filename='funcs.js')}}"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{url_for('home')}}"> <img src="{{url_for('static',filename='img/Loogo.png')}}" alt="Jorzo logo"> </a>
+
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <div class="collapse navbar-collapse justify-content-end " id="menu">
+                        <ul class="navbar-nav ml-auto">
+
+                            {%if current_user.is_authenticated%}
+                            <li class="nav-item"><a href="{{url_for('logout')}}" class="nav-link">Logout</a></li>
+                            <li class="nav-item"><a href="{{url_for('memoirs')}}" class="nav-link">My Memoirs</a></li>
+                             <li class="nav-item"><a href="{{url_for('home')}}" class="nav-link">Home</a></li>
+
+                             {%endif%}
+
+
+
+
+
+
+                        </ul>
+                    </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </nav>
+
 
     <div class="paper">
   <div class="lines">
     <div class="text" contenteditable spellcheck="false">
 
-      from {{slam.name}} To  {{current_user.username}} <br /><br />
-      I am available for you in any situation as your friend . You can call me at {{slam.phone_num}} or you can reach me on {{slam.mail}}. If you wanna meet me, peek in the followig address:
-      {{slam.address}}.
+     From {{slam.name}},<br/><br/>
+
+     {{slam.date_created.date()}}. <br/><br/>
+
+     <span class='req'> My Friends call me, <span>
+      <span class='ans'> {{slam.pet_name}}</span>
 
       <br /><br />
 
-      dear {{slam.nickname}},
-      If today was your last day, and I'm With you, {{slam.lastd}}. You are my {{slam.what_us}}.
+      <span class='req'> My Phone Number is <span>
+      <span class='ans'> {{slam.phone_num}}</span>
+      <span class='req'> And My email is <span>
+      <span class='ans'> {{slam.mail}}</span>
       <br /><br />
 
-      {{slam.likes}} oh , and dont forget to hear into {{slam.Songs}}
+      {%if slam.birthday%}
+
+      <span class='req'> Im born on: <span>
+      <span class='ans'> {{slam.birthday}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.nick_name%}
+
+      <span class='req'> If I'd give you a nick name,it would be  <span>
+      <span class='ans'> {{slam.nick_name}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.likes%}
+
+      <span class='req'> The thing I like the most in you: <span>
+      <span class='ans'> {{slam.likes}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.hates%}
+
+      <span class='req'> The thing I hate the most in you: <span>
+      <span class='ans'> {{slam.hates}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+       {%if slam.what_us%}
+
+      <span class='req'>You are my: <span>
+      <span class='ans'> {{slam.what_us}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+       {%if slam.lastd%}
+
+      <span class='req'>If Today was Our last day : <span>
+      <span class='ans'> {{slam.lastd}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.Songs%}
+
+      <span class='req'>My Recomended song for you :  <span>
+      <span class='ans'> {{slam.Songs}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+       <br /><br />
+
+
+      {%if slam.Quote%}
+
+      <span class='req'>:  <span>
+      <span class='ans'> {{slam.Quote}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+
 
       <br /><br />
-     {{slam.hates}} . and dont forget to wish me on {{slam.birthday}}
-     <br /><br />
 
-     {{slam.Quote}}
-      <br /><br />
-      with love,
-      {{slam.pet_name}} a.k.a {{slam.name}}
+
+
+
 
 
 
@@ -41,7 +169,16 @@
   <div class="holes hole-top"></div>
   <div class="holes hole-middle"></div>
   <div class="holes hole-bottom"></div>
+  <a  class='btn btn-outline-info' href="{{url_for('pdfslam', slam_id = slam.id)}}">Download Page</a>
 </div>
+
+
+<div class="row">
+  <div class="container">
+
+
+  </div>
+  </div>
 
 </body>
 </html>

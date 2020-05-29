@@ -2,6 +2,9 @@
 from flask import *
 from Jurzo.fourms import RegistrationForm , LoginForm,PageForm
 from Jurzo import jurzo
+import pdfkit
+
+
 
 from Jurzo.models import User, Page
 from Jurzo import db,bcrypt
@@ -95,6 +98,24 @@ def slam(slam_id):
         return render_template('slam.html' , slam=slam)
     else:
         abort(403)
+
+
+@jurzo.route('/slampdf/<slam_id>',methods=['GET','POST'])
+def pdfslam(slam_id):
+    slam=Page.query.get_or_404(slam_id)
+    if current_user == slam.owner:
+        slam_html = render_template('new_pdf.html',slam=slam)
+        slam_pdf = pdfkit.from_string(slam_html,False)
+
+        response = make_response(slam_pdf,False)
+        response.headers['Content-Type']='application/pdf'
+        response.headers['Content-Disposition']="inline; filename = out.pdf"
+        return response
+
+
+
+
+
 
 
 

@@ -44,7 +44,7 @@
 
                <div class="col-md-4">
                 <textarea id="form7" class="md-textarea form-control" rows="1"> domainname{{url_for('page',username=current_user.username)}}</textarea>
-               <label for="form7">Your Slam Link</label>
+               <label style="color: white" for="form7">Get your slam , and Share <br> with Friends </label>
              </div>
 
 
@@ -54,7 +54,7 @@
                <div class="col-md-4">
              </div>
 
-            <a onclick ="CopyText()" class="btn btn-outline-light">Get Your Slam</a>
+            <button onclick ="CopyText()"  class="btn btn-outline-light">Get Your Slam</button>
             {%else%}
             <h3 class="h3">lorem ipsum.</h3>
             <a class="btn btn-outline-light" href="{{url_for('register')}}">Get Started</a>
@@ -128,6 +128,7 @@
 
 
         </div>
+
 
 
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{slam.name}}-{{ current_user.username}}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='slam.css')}}">
+</head>
+
+
+<body>
+<div class="paper">
+  <div class="lines">
+    <div class="text" contenteditable spellcheck="false">
+
+     From {{slam.name}},<br/><br/>
+
+     {{slam.date_created.date()}}. <br/><br/>
+
+     <span class='req'> My Friends call me, <span>
+      <span class='ans'> {{slam.pet_name}}</span>
+
+      <br /><br />
+
+      <span class='req'> My Phone Number is <span>
+      <span class='ans'> {{slam.phone_num}}</span>
+      <span class='req'> And My email is <span>
+      <span class='ans'> {{slam.mail}}</span>
+      <br /><br />
+
+      {%if slam.birthday%}
+
+      <span class='req'> Im born on: <span>
+      <span class='ans'> {{slam.birthday}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.nick_name%}
+
+      <span class='req'> If I'd give you a nick name,it would be  <span>
+      <span class='ans'> {{slam.nick_name}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.likes%}
+
+      <span class='req'> The thing I like the most in you: <span>
+      <span class='ans'> {{slam.likes}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.hates%}
+
+      <span class='req'> The thing I hate the most in you: <span>
+      <span class='ans'> {{slam.hates}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+       {%if slam.what_us%}
+
+      <span class='req'>You are my: <span>
+      <span class='ans'> {{slam.what_us}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+       {%if slam.lastd%}
+
+      <span class='req'>If Today was Our last day : <span>
+      <span class='ans'> {{slam.lastd}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+      {%if slam.Songs%}
+
+      <span class='req'>My Recomended song for you :  <span>
+      <span class='ans'> {{slam.Songs}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+       <br /><br />
+
+
+      {%if slam.Quote%}
+
+      <span class='req'>:  <span>
+      <span class='ans'> {{slam.Quote}}</span>
+      <br /><br />
+
+
+      {%endif%}
+
+
+
+
+
+</body>
