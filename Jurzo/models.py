@@ -1,4 +1,5 @@
-from Jurzo import db,login_manager
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from Jurzo import db,login_manager,jurzo
 from datetime import datetime
 from flask_login import UserMixin
 
@@ -18,6 +19,20 @@ class User(db.Model,UserMixin):
     id=db.Column(db.Integer,primary_key=True)
     password=db.Column(db.String(60),nullable=False)
     page=db.relationship('Page',backref= 'owner' , lazy=True)
+
+    def get_reset_token(self,expire_sec=1800):
+        s=Serializer(jurzo.config['SECRET_KEY'],expire_sec)
+        return s.dumps({'user_id':self.id}).decode('utf-8')
+
+
+    @staticmethod
+    def verify_reset_token(token):
+        s=Serializer(jurzo.config['SECRET_KEY'])
+        try:
+           user_id= s.loads(token)['user_id']
+        except:
+            return None
+        return User.query.get(user_id)
 
 
 

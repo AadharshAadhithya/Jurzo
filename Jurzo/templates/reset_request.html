@@ -1,0 +1,54 @@
+{%extends "layout.html"%}
+
+{%block content%}
+
+<div class="modal-dialog text-center">
+  <div class="col-sm-9 main-section">
+    <div class="modal-content">
+      <div class="col-12 user-img">
+        <img src="{{url_for('static',filename='img/face.png')}}">
+
+      </div>
+
+      <div class="col-12 form-input">
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+          <div class="form-group">
+             {{form.email.label(class="form-control-label")}}
+
+            {% if form.email.errors %}
+            {{form.email(class="form-control is-invalid")}}
+            {%for error in form.email.errors%}
+            <div class="invalid-feeback">
+              <span>{{form.email.error}}</span>
+            </div>
+
+            {%endfor%}
+
+            {%else%}
+             {{form.email(class="form-control")}}
+
+
+            {%endif%}
+          </div>
+
+
+
+          {{form.submit(class="btn btn-outline-light")}}
+
+
+        </form>
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{%endblock%}

@@ -42,8 +42,8 @@
                   <div class="col-md-4">
              </div>
 
-               <div class="col-md-4">
-                <textarea id="form7" class="md-textarea form-control" rows="1"> domainname{{url_for('page',username=current_user.username)}}</textarea>
+               <div class="col-md-4 container-fluid">
+                <textarea id="form7" class="md-textarea form-control" rows="1">{{url_for('page',username=current_user.username , _external = True)}}</textarea>
                <label style="color: white" for="form7">Get your slam , and Share <br> with Friends </label>
              </div>
 
