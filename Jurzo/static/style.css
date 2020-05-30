@@ -14,6 +14,14 @@ body {
 
 }
 
+.caption .btn{
+  color:white;
+}
+
+.btn-outline-info:hover{
+  background-color: #0e0d2c
+}
+
 
 
 .blog{
@@ -121,9 +129,9 @@ nav a{
 
 
 .cta-100 {
-  margin-top: 250%;
-  padding-left: 7%;
-  padding-top: 7%;
+  margin-top: 870px;
+  padding-left: 0%;
+  padding-top: 13%;
 }
 .col-md-4{
     padding-bottom:20px;
@@ -134,7 +142,7 @@ nav a{
 }
 .mt{float: left;margin-top: -20px;padding-top: 20px;}
 .bg-blue-ui {
-  background-color: #708198 !important;
+  background-color: #0e0d2c!important;
 }
 figure img{width:300px;}
 
@@ -163,6 +171,32 @@ figure img{width:300px;}
 }
 
 
+
+.btn-outline-info-hover{
+  background-color:  #0e0b2b ;
+  border-color: #0e0b2b ;
+  color:white;
+}
+.btn-outline-info{
+  background-color:transparent;
+  border-color: #0e0b2b ;
+  color:white;
+}
+
+
+
+
+
+.caption button{
+  color: white;
+
+}
+
+.btn{
+  border-width: small;
+  color: #0E0D2C;
+
+}
 
 
 .item-carousel-blog-block {

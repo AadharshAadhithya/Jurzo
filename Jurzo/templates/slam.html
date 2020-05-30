@@ -18,7 +18,7 @@
 
   <nav class="navbar navbar-dark navbar-expand-md fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{url_for('home')}}"> <img src="{{url_for('static',filename='img/Loogo.png')}}" alt="Jorzo logo"> </a>
+                <a class="navbar-brand" href="{{url_for('main.home')}}"> <img src="{{url_for('static',filename='img/Loogo.png')}}" alt="Jorzo logo"> </a>
 
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
                     <span class="navbar-toggler-icon"></span>
@@ -27,9 +27,9 @@
                         <ul class="navbar-nav ml-auto">
 
                             {%if current_user.is_authenticated%}
-                            <li class="nav-item"><a href="{{url_for('logout')}}" class="nav-link">Logout</a></li>
-                            <li class="nav-item"><a href="{{url_for('memoirs')}}" class="nav-link">My Memoirs</a></li>
-                             <li class="nav-item"><a href="{{url_for('home')}}" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="{{url_for('users.logout')}}" class="nav-link">Logout</a></li>
+                            <li class="nav-item"><a href="{{url_for('users.memoirs')}}" class="nav-link">My Memoirs</a></li>
+                             <li class="nav-item"><a href="{{url_for('main.home')}}" class="nav-link">Home</a></li>
 
                              {%endif%}
 
@@ -169,7 +169,7 @@
   <div class="holes hole-top"></div>
   <div class="holes hole-middle"></div>
   <div class="holes hole-bottom"></div>
-  <a  class='btn btn-outline-info' href="{{url_for('pdfslam', slam_id = slam.id)}}">Download Page</a>
+  <a  class='btn btn-outline-info' href="{{url_for('pages.pdfslam', slam_id = slam.id)}}">Download Page</a>
 </div>
 
 

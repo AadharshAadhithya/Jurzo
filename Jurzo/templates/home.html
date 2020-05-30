@@ -43,7 +43,7 @@
              </div>
 
                <div class="col-md-4 container-fluid">
-                <textarea id="form7" class="md-textarea form-control" rows="1">{{url_for('page',username=current_user.username , _external = True)}}</textarea>
+                <textarea id="form7" class="md-textarea form-control" rows="1">{{url_for('pages.page',username=current_user.username , _external = True)}}</textarea>
                <label style="color: white" for="form7">Get your slam , and Share <br> with Friends </label>
              </div>
 
@@ -57,7 +57,7 @@
             <button onclick ="CopyText()"  class="btn btn-outline-light">Get Your Slam</button>
             {%else%}
             <h3 class="h3">lorem ipsum.</h3>
-            <a class="btn btn-outline-light" href="{{url_for('register')}}">Get Started</a>
+            <a class="btn btn-outline-light" href="{{url_for('users.register')}}">Get Started</a>
             {%endif%}
 
 
@@ -68,6 +68,8 @@
 
 
             {%endblock content%}
+
+
 
 
 
@@ -128,6 +130,9 @@
 
 
         </div>
+
+
+
 
 
 
