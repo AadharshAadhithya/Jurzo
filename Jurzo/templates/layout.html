@@ -143,21 +143,12 @@
         <div class="footer container-fluid">
             <div class="row">
 
-                <div class="col-md-6">
+                <div class=" footer-img col-md-6">
                      <img class="align-self-center mr-3" src="{{url_for('static',filename='img/Loogo.png')}}">
 
                 </div>
 
-                <div class="col-md-6">
-                    {%if current_user.is_authenticated%}
-                     <p class="container media-body">Welcome {{current_user.username}}</p>
 
-                    {%else%}
-                     <p class="container media-body">This is a beta version.</p>
-                   {%endif%}
-
-
-                </div>
 
 
 
